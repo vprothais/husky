@@ -83,8 +83,8 @@ You'll still get a `command not found` error message in your output which may be
 if (process.env.NODE_ENV === 'production' || process.env.CI === 'true') {
   process.exit(0)
 }
-const husky = (await import('husky')).default
-console.log(husky())
+const husky = await import('husky');
+husky.install();
 ```
 
 Then, use it in `prepare`:
